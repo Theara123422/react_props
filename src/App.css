@@ -1,0 +1,28 @@
+.container-box{
+    height: 80vh;
+    border: 2px solid black;
+}
+.sidebar{
+    width: 15%;
+    background-color: #e1e0e0;
+}
+.menu a{
+    text-decoration: none;
+}
+.content-box{
+    width: 84%;
+    height: 100%;
+    background-color: #e1e0e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.myskill,.mycourse{
+    width: 100%;
+    height: 49%;
+    border: 2px solid black;
+}
+.card-container{
+    width: 100%;
+    height: 80%;
+}
