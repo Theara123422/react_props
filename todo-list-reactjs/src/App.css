@@ -3,7 +3,7 @@
 }
 .app-container{
     width: 60%;
-    height: 600px;
+    height: auto;
     border: 2px solid black;
     margin: 20px auto;
 }

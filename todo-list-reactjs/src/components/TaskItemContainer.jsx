@@ -1,7 +1,7 @@
 import React from 'react'
 import TaskItem from './TaskItem'
 
-const TaskItemContainer = ({tasks}) => {
+const TaskItemContainer = ({tasks,setTask}) => {
         return tasks.length > 0 ? 
             (
               <ul className='task-item-container px-4 list-unstyled'>
@@ -11,6 +11,7 @@ const TaskItemContainer = ({tasks}) => {
                               <TaskItem 
                                   key={task.id}
                                   task={task}
+                                  setTask={setTask}
                               />
                           )
                       })

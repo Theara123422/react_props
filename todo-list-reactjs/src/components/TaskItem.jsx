@@ -1,20 +1,34 @@
 import React from 'react'
-import { BookOpenIcon,TrashIcon } from '@heroicons/react/16/solid'
+import { BookOpenIcon,TrashIcon,CheckCircleIcon } from '@heroicons/react/16/solid'
 
 const TaskItem = ({task}) => {
+  const handleMarkAsDone = () => {
+      const doneTask = {
+         
+      }
+  }
   return (
-    <li className='d-flex gap-3 mt-4 mb-2 bg-light py-3 px-3' style={{height : '20%'}}>
+    <li className='d-flex gap-3 mt-4 mb-2 bg-light py-2 px-3' style={{height : '10%'}}>
         <BookOpenIcon style={{width : '30px'}}/>
-        <div>
-            <p className='m-0'>{task.text}</p>
-            <p>{task.id}</p>
+        <div className='mt-2 h-100'>
+            <p className={task.completed ? 'text-decoration-line-through' : 'text-decoration-none'}>{task.text}</p>
+            <p>{task.created_at}</p>
         </div>
-        <button 
-            className='btn btn-outline-danger ms-auto' 
-        >
-            <TrashIcon style={{width : '20px'}}/>
-            Remove
-        </button>
+        <div className="btn-group ms-auto">
+              <button 
+                  className='btn ms-auto my-3 btn-outline-success' 
+                  onClick={() => handleMarkAsDone(task.id)}
+              >
+                  <CheckCircleIcon style={{width : '20px',marginRight : '5px'}}/>
+                  Mark as Done
+              </button>
+              <button 
+                  className='btn btn-outline-danger ms-auto my-3' 
+              >
+                  <TrashIcon style={{width : '20px',marginRight : '5px'}}/>
+                  Remove
+              </button>
+        </div>
     </li>
   )
 }
