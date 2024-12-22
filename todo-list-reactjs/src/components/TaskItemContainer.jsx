@@ -12,6 +12,7 @@ const TaskItemContainer = ({tasks,setTask}) => {
                                   key={task.id}
                                   task={task}
                                   setTask={setTask}
+                                  tasks={tasks}
                               />
                           )
                       })
