@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 
-const Dashboard = () => {
+const Dashboard = ({blogs}) => {
+//   console.log(blogs);
+
   return (
     <div className='page-size'>
         <div className="sidebar d-flex flex-column align-items-center">

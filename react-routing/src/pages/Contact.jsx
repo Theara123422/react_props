@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className='page-size'>
+    <div className='page-size' style={{justifyContent : 'center'}}>
         <h1>Contact Page</h1>
     </div>
   )
