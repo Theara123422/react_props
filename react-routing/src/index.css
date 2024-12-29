@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:wght@700&display=swap');
+
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --navbar-bg: #1F3C88;
+  --navbar-text: #FFFFFF;
+  --body-bg: #FAFAFA;
+  --header-body-text: #1F3C88;
+  --normal-body-text: #333333;
+  --header-font: "Roboto", sans-serif;
+  --normal-font: "Inter", sans-serif;
+}
