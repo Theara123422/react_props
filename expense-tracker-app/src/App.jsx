@@ -5,7 +5,7 @@ import ShowExpense from './page/ShowExpense'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route,Routes } from 'react-router-dom'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 function App() {
   const [expenses,setExpenses] = useState(() => {
 
@@ -14,6 +14,10 @@ function App() {
       return (expenses_item) ? expenses_item : [];
 
   })
+
+  useEffect(() => {
+      localStorage.setItem('expenses' , JSON.stringify(expenses))
+  },[expenses])
   return (
      <>
         <Navbar />
