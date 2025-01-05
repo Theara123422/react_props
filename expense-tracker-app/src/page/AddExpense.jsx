@@ -2,12 +2,18 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 
 const AddExpense = ({expenses,setExpenses}) => {
-  const [title,setTitle] = useState("");
-  const [type,setType]   = useState("Income");
-  const [category,setCategory] = useState("Trip");
-  const [amount,setAmount] = useState(0);
-  const [remark,setRemark] = useState("");
-  const handleAddExpense = (event) => {
+    const [title,setTitle] = useState("");
+    const [type,setType]   = useState("Income");
+    const [category,setCategory] = useState("Trip");
+    const [amount,setAmount] = useState(0);
+    const [remark,setRemark] = useState("");
+
+    const incomeCategories = ['Monthly Income','Self Business', 'Other'];
+    const outcomeCategories= ['Daily Basis','Health Care','Entertainment','Saving','Other'];
+
+    const categoryOptions = (type == 'Income') ? incomeCategories : outcomeCategories;
+
+    const handleAddExpense = (event) => {
       event.preventDefault();
 
       if(title == "" && remark == "" && amount < 0){
@@ -71,15 +77,15 @@ const AddExpense = ({expenses,setExpenses}) => {
                         value={category}
                         onChange={(event) => setCategory(event.target.value)}
                     >
-                        <option  value="Trip">
-                                Trip
-                        </option>
-                        <option  value="Food & Supply">
-                                Food & Supply
-                        </option>
-                        <option  value="Shopping">
-                                Shopping
-                        </option>
+                        {
+                            categoryOptions.map(categoryOption => {
+                                return (
+                                    <option value={categoryOption}>
+                                        {categoryOption}
+                                    </option>
+                                )
+                            })
+                        }
                     </select>
                 </div>
             </div>
@@ -93,11 +99,11 @@ const AddExpense = ({expenses,setExpenses}) => {
             />
             <label htmlFor="" className='form-label'>Remark : </label>
             <textarea 
-                    className='form-control border border-2 border-primary'
-                    value={remark}
-                    onChange={(event) => setRemark(event.target.value)}
+                className='form-control border border-2 border-primary'
+                value={remark}
+                onChange={(event) => setRemark(event.target.value)}
+                    
             >
-
             </textarea>
             <button type='submit' className='btn btn-outline-primary d-block mx-auto my-4 w-25'>Submit</button>
         </form>

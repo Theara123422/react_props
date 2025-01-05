@@ -20,14 +20,16 @@ function App() {
       localStorage.setItem('expenses' , JSON.stringify(expenses));
   },[expenses]);
 
+ 
+
   return (
      <>
         <Navbar />
         <ToastContainer />
         <Routes>
-            <Route path='/' element={<Home />}/>
-            <Route path='/add-expense' element={<AddExpense expenses={expenses} setExpenses={setExpenses} />}/>
-            <Route path='/show-expense' element={<ShowExpense expenses={expenses} setExpenses={setExpenses} />}/>
+            <Route path='/' element={<Home expenses={expenses} />}/>
+            <Route path='/add-expense' element={<AddExpense  expenses={expenses} setExpenses={setExpenses} />}/>
+            <Route path='/show-expense' element={<ShowExpense  expenses={expenses} setExpenses={setExpenses} />}/>
         </Routes>
      </>
   )
