@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { toast } from 'react-toastify';
 
 const AddExpense = ({expenses,setExpenses}) => {
   const [title,setTitle] = useState("");
@@ -9,6 +10,13 @@ const AddExpense = ({expenses,setExpenses}) => {
   const handleAddExpense = (event) => {
       event.preventDefault();
 
+      if(title == "" && remark == "" && amount < 0){
+        toast.error('Invalid Input',{
+            position : 'bottom-right',
+            autoClose : 1000
+        });
+        return;
+      }
       const newExpense = {
             id : expenses.length + 1,
             title,
@@ -19,7 +27,14 @@ const AddExpense = ({expenses,setExpenses}) => {
         }
 
         setExpenses([...expenses,newExpense]);
-        console.log(expenses);
+        toast.success('Add Expense Success',{
+            position : 'bottom-right',
+            autoClose : 1000
+        });
+
+        setTitle("");
+        setRemark("");
+        setAmount(0);
   }
   return (
     <div className='page-size'>
