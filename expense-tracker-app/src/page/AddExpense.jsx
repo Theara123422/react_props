@@ -1,13 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { toast } from 'react-toastify';
 
 const AddExpense = ({expenses,setExpenses}) => {
     
     const [title,setTitle] = useState("");
     const [type,setType]   = useState("Income");
-    const [category,setCategory] = useState(() => {
-        return type == 'Income' ? 'Monthly Income' : 'Daily Basis';
-    });
+    const [category,setCategory] = useState("");
     const [amount,setAmount] = useState(0);
     const [remark,setRemark] = useState("");
 
@@ -45,6 +43,9 @@ const AddExpense = ({expenses,setExpenses}) => {
         setRemark("");
         setAmount(0);
   }
+  useEffect(() => {
+       setCategory(type == 'Income' ? 'Monthly Income' : 'Daily Basis');
+  },[type])
   return (
     <div className='page-size'>
         <h2 className='my-3'>Add Your New Expense Here</h2>
