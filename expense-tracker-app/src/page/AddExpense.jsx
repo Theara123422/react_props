@@ -5,7 +5,9 @@ const AddExpense = ({expenses,setExpenses}) => {
     
     const [title,setTitle] = useState("");
     const [type,setType]   = useState("Income");
-    const [category,setCategory] = useState("Trip");
+    const [category,setCategory] = useState(() => {
+        return type == 'Income' ? 'Monthly Income' : 'Daily Basis';
+    });
     const [amount,setAmount] = useState(0);
     const [remark,setRemark] = useState("");
 

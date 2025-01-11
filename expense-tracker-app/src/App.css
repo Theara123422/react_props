@@ -79,3 +79,7 @@
 .form-size{
     width: 40%;
 }
+.table-container{
+    height: 400px;
+    overflow: scroll;
+}
