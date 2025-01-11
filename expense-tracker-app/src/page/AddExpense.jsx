@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { toast } from 'react-toastify';
 
 const AddExpense = ({expenses,setExpenses}) => {
+    
     const [title,setTitle] = useState("");
     const [type,setType]   = useState("Income");
     const [category,setCategory] = useState("Trip");

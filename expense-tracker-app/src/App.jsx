@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Home from './page/Home'
 import AddExpense from './page/AddExpense'
 import ShowExpense from './page/ShowExpense'
+import ExpenseDetail from './page/ExpenseDetail'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Route,Routes } from 'react-router-dom'
@@ -30,6 +31,7 @@ function App() {
             <Route path='/' element={<Home expenses={expenses} />}/>
             <Route path='/add-expense' element={<AddExpense  expenses={expenses} setExpenses={setExpenses} />}/>
             <Route path='/show-expense' element={<ShowExpense  expenses={expenses} setExpenses={setExpenses} />}/>
+            <Route path='/expense/:id' element={<ExpenseDetail expenses={expenses}/>} />
         </Routes>
      </>
   )
